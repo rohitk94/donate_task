@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="styles.css">
+<head>
+    <title>Donate Books</title>
+</head>
+
+<body>
+<div>
+    <div id="box">
+
+        <div class="w3-container blue">
+            <h2>Donate Books</h2>
+        </div>
+
+        <form class="w3-container">
+            <label>Check ISBN</label>
+            <input class="w3-input" type="text" id="isbnsearch" placeholder="Enter ISBN here..." required> <br>
+            <div style="width: 100%; text-align: center;">
+                <button id="bookEnquiry" class="w3-btn w3-blue-grey">
+                    Check
+                </button>
+            </div>
+        </form>
+
+        <button id="nextEnquiry" class="w3-btn w3-blue-grey w3-right">Next</button>
+    </div>
+
+    <div class="table" id="table">
+        <div class="card">
+            <span>Booking Details</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Asin</th>
+                    <th>Weight</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <div class="card">
+            Total Weight -
+            <span id="sum"></span>
+        </div>
+
+        <br>
+
+        <div class="btn-group" style="width:100%; display: flex">
+            <div style="width: 50%;"></div>
+            <div style="width: 50%">
+                <button style="width:25%;margin-left: 48%" class="w3-btn w3-blue-grey" id="startOver">Start Over</button>
+                <button style="width:25%" class="w3-btn w3-blue-grey">Proceed</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="action.js"></script>
+</body>
+
+</html>

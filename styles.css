@@ -1,0 +1,35 @@
+#box {
+    width: 700px;
+    height: 100%;
+    margin: 0px auto;
+    padding: 5%;
+    border: 2px solid black;
+}
+
+.table {
+    width: 70%;
+    margin: 0 auto;
+    display: none;
+}
+
+.card {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
