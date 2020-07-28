@@ -1,5 +1,5 @@
 (function () {
-    let tdata = [], _d = null, index = 0, maxWeight = 907.6;  // 50 lbs into grams
+    let tdata = [], _d = null, index = 0, maxWeight = 22679.6;  // 50 lbs into grams
     let errorElement = document.getElementById("alertMessage");
 
     /**
