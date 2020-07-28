@@ -1,5 +1,6 @@
 (function () {
-    let tdata = [], _d = null, index = 0, maxWeight = 907.185;
+    let tdata = [], _d = null, index = 0, maxWeight = 907.6;  // 50 lbs into grams
+    let errorElement = document.getElementById("alertMessage");
 
     /**
      * Get book enquiry details
@@ -8,7 +9,7 @@
         e.preventDefault();
         let isbn = document.getElementById("isbnsearch").value;
         if (!isbn) {
-            alert("Isbn is required!");
+            showMessage(1, 'ISBN is required!');
         }
 
         let data = await fetch("https://api.palletiq.com/v1/isbn/" + isbn + "/0?token=OLcchl0kP80bxfTcLbYVKx4Br4Rt9Wda");
@@ -19,11 +20,12 @@
 
             let sum = sumData(tdata);
             if((parseFloat(sum) + data.meta.weight) >= maxWeight) {
-                alert("You have reached your weight limit!");
+                showMessage(2, 'You reached maximum books for donation - click the Proceed button for shipping process. If you have more books, you may start over the process after the labels are created.');
                 return;
             }
             index++;
-            alert('Data fetched successfully.');
+            showMessage(0, 'Yes this book eligible to donate. Click Next to add to the item list.');
+
             tdata.push({
                 index,
                 image: data.meta.image_url,
@@ -35,7 +37,9 @@
 
             _d = tdata[tdata.length - 1];
         }
-        else alert('Sorry! This Book ISBN is not available!Try with other.')
+        else {
+            showMessage(1, 'We are sorry, this book is not eligible for donation, kindly, check another!');
+        }
     });
 
     /**
@@ -43,6 +47,7 @@
      */
     document.getElementById("nextEnquiry").addEventListener("click", async (e) => {
         e.preventDefault();
+        document.getElementById('display').style.display = 'none';
         if (_d) {
             let keys = Object.keys(_d), tds = "", id = "delete_" + index;
             for (let index = 0; index < keys.length; index++) {
@@ -77,8 +82,6 @@
                 console.log((Number(index)))
                 tdata.splice((Number(index) - 1), 1);
 
-                console.log('12312321',tdata);
-
                 index = tdata.length;
                 let tb = document.getElementById("tbody");
 
@@ -96,7 +99,7 @@
                 document.getElementById("sum").innerHTML = sum;
             })
         } else {
-            alert("No enquiry found!");
+            showMessage(0, 'No enquiry found!');
         }
     });
 
@@ -110,7 +113,7 @@
         let tbody = document.getElementById("tbody");
         tbody.innerHTML = '';
         tdata = [];
-        index = 1;
+        index = 0;
         document.getElementById("table").style.display = "none";
         let sum = sumData(tdata);
         document.getElementById("sum").innerHTML = sum;
@@ -127,6 +130,24 @@
             sum = sum + value.weight;
         }
         return sum.toFixed(2)
+    }
+
+    /**
+     * Show error messsage
+     * @param error
+     * @param message
+     */
+    function showMessage (error, message) {
+        errorElement.innerHTML = message;
+        document.getElementById('display').style.display = 'flex';
+        let background = "green";
+        if(error === 1) {
+            background = "red";
+        }
+        if(error === 2) {
+            background = "orange";
+        }
+        document.getElementById('display').style["background-color"] = background;
     }
 
 })();

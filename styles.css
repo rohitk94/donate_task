@@ -33,3 +33,39 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.alertWrapper {
+    width: 80%;
+}
+
+.nextWrapper {
+    display: flex;
+    align-items: center;
+    width:100%;
+    padding: 5px;
+}
+
+
+/* The alert message box */
+.alert {
+    background-color: #f44336; /* Red */
+    height: 100%;
+    color: white;
+    display: none;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The close button */
+.closebtn {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}

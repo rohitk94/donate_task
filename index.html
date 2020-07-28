@@ -23,9 +23,20 @@
                     Check
                 </button>
             </div>
-        </form>
 
-        <button id="nextEnquiry" class="w3-btn w3-blue-grey w3-right">Next</button>
+        </form>
+        <div class="nextWrapper">
+            <div class="alertWrapper">
+                <div class="alert" id="display">
+                    <span id="alertMessage" class="closebtn"
+                          onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+            </div>
+            <div style="width: 100px">
+                <button id="nextEnquiry" class="w3-btn w3-blue-grey w3-right">Next</button>
+            </div>
+        </div>
+
     </div>
 
     <div class="table" id="table">
@@ -34,15 +45,15 @@
         </div>
         <table>
             <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Asin</th>
-                    <th>Weight</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                </tr>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Asin</th>
+                <th>Weight</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
             </thead>
             <tbody id="tbody"></tbody>
         </table>
@@ -53,10 +64,12 @@
 
         <br>
 
+
         <div class="btn-group" style="width:100%; display: flex">
             <div style="width: 50%;"></div>
             <div style="width: 50%">
-                <button style="width:25%;margin-left: 48%" class="w3-btn w3-blue-grey" id="startOver">Start Over</button>
+                <button style="width:25%;margin-left: 48%" class="w3-btn w3-blue-grey" id="startOver">Start Over
+                </button>
                 <button style="width:25%" class="w3-btn w3-blue-grey">Proceed</button>
             </div>
         </div>
