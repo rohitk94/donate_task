@@ -1,15 +1,22 @@
+body {
+    padding: 10px;
+    top: 0;
+    left: 0;
+}
+
 #box {
-    width: 700px;
+    width: 600px;
     height: 100%;
     margin: 0px auto;
     padding: 5%;
     border: 2px solid black;
 }
 
+
 .table {
-    width: 70%;
     margin: 0 auto;
     display: none;
+    width:85%;
 }
 
 .card {
@@ -28,6 +35,7 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    width: 250px;
 }
 
 tr:nth-child(even) {
@@ -41,7 +49,7 @@ tr:nth-child(even) {
 .nextWrapper {
     display: flex;
     align-items: center;
-    width:100%;
+    width: 100%;
     padding: 5px;
 }
 
@@ -68,4 +76,27 @@ tr:nth-child(even) {
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.buttonWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tableWrapper {
+    overflow-x:auto;
+    border: 1px solid #a9a9a9;
+}
+
+
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 600px) {
+    #box {
+        width: 100%;
+    }
+
+    .table {
+        width: 100%;
+    }
 }

@@ -23,7 +23,6 @@
                     Check
                 </button>
             </div>
-
         </form>
         <div class="nextWrapper">
             <div class="alertWrapper">
@@ -43,20 +42,23 @@
         <div class="card">
             <span>Booking Details</span>
         </div>
-        <table>
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Asin</th>
-                <th>Weight</th>
-                <th>Status</th>
-                <th>Edit</th>
-            </tr>
-            </thead>
-            <tbody id="tbody"></tbody>
-        </table>
+
+        <div class="tableWrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Asin</th>
+                    <th>Weight</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
         <div class="card">
             Total Weight -
             <span id="sum"></span>
@@ -66,11 +68,10 @@
 
 
         <div class="btn-group" style="width:100%; display: flex">
-            <div style="width: 50%;"></div>
-            <div style="width: 50%">
-                <button style="width:25%;margin-left: 48%" class="w3-btn w3-blue-grey" id="startOver">Start Over
-                </button>
-                <button style="width:25%" class="w3-btn w3-blue-grey">Proceed</button>
+            <div class="buttonWrapper">
+                <button class="w3-btn w3-blue-grey" id="startOver" style="width: 170px">Start Over</button>
+                <div style="width: 5px"></div>
+                <button class="w3-btn w3-blue-grey" id="" style="width: 170px">Proceed</button>
             </div>
         </div>
 

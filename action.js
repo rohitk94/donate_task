@@ -23,6 +23,12 @@
                 showMessage(2, 'You reached maximum books for donation - click the Proceed button for shipping process. If you have more books, you may start over the process after the labels are created.');
                 return;
             }
+
+            if(!data.winner.amazonLogData.fba_decision){
+                showMessage(1, 'We are sorry, this book is not eligible for donation, kindly, check another!');
+                return;
+            }
+
             index++;
             showMessage(0, 'Yes this book eligible to donate. Click Next to add to the item list.');
 
